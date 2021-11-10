@@ -6,6 +6,8 @@
 <!-- badges: start -->
 
 [![R-CMD-check](https://github.com/ggseg/ggsegEconomo/workflows/R-CMD-check/badge.svg)](https://github.com/ggseg/ggsegEconomo/actions)
+[![DOI](https://zenodo.org/badge/424723872.svg)](https://zenodo.org/badge/latestdoi/424723872)
+
 <!-- badges: end -->
 
 This package contains dataset for plotting the Economo & Koskinas 1925
