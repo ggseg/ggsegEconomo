@@ -67,8 +67,52 @@
 
       </header><div class="row">
   <div class="contents col-md-9">
-This is a support package for the ggseg, and ggseg3d packages.
-    It contains the economo atlases to plot using functions from those two packages.
+<div id="ggsegeconomo-" class="section level1">
+<div class="page-header"><h1 class="hasAnchor">
+<a href="#ggsegeconomo-" class="anchor"></a>ggsegEconomo <img src="reference/figures/logo.png" align="right" height="138.5">
+</h1></div>
+<!-- badges: start -->
+
+<p>This package contains dataset for plotting the Economo &amp; Koskinas 1925 historical atlas of functional segregation with ggseg and ggseg3d, based on the supplementary materials of Pijnenburg et al., NeuroImage, 239, 2021 <a href="https://doi.org/10.1016/j.neuroimage.2021.118274">DOI</a>; Version 1; 15-01-2021.</p>
+<p>C.F. von Economo, G.N. Koskinas; Die Cytoarchitektonik Der Hirnrinde Des Erwachsenen Menschen; J. Springer (1925)</p>
+<p>To learn how to use these atlases, please look at the documentation for <a href="https://ggseg.github.io/ggseg/">ggseg</a> and <a href="https://ggseg.github.io/ggseg3d">ggseg3d</a></p>
+<div id="installation" class="section level2">
+<h2 class="hasAnchor">
+<a href="#installation" class="anchor"></a>Installation</h2>
+<p>We recommend installing the ggseg-atlases through the ggseg <a href="https://ggseg.r-universe.dev/ui#builds">r-universe</a>:</p>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Enable this universe</span>
+<span class="fu"><a href="https://rdrr.io/r/base/options.html">options</a></span><span class="op">(</span>repos <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span>
+    ggseg <span class="op">=</span> <span class="st">'https://ggseg.r-universe.dev'</span>,
+    CRAN <span class="op">=</span> <span class="st">'https://cloud.r-project.org'</span><span class="op">)</span><span class="op">)</span>
+
+<span class="co"># Install some packages</span>
+<span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">'ggsegEconomo'</span><span class="op">)</span></code></pre></div>
+<p>You can install the released version of ggsegEconomo from <a href="https://github.com/">GitHub</a> with:</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># install.packages("remotes")</span>
+<span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span><span class="op">(</span><span class="st">"ggseg/ggsegEconomo"</span><span class="op">)</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/ggseg/ggseg">ggseg</a></span><span class="op">)</span>
+<span class="co">#&gt; Warning: package 'ggseg' was built under R version 4.1.1</span>
+<span class="co">#&gt; Loading required package: ggplot2</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/ggseg/ggseg3d/">ggseg3d</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">ggsegEconomo</span><span class="op">)</span>
+
+<span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">economo</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu">theme</span><span class="op">(</span>legend.position <span class="op">=</span> <span class="st">"bottom"</span>, 
+        legend.text <span class="op">=</span> <span class="fu">element_text</span><span class="op">(</span>size <span class="op">=</span> <span class="fl">9</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu">guides</span><span class="op">(</span>fill <span class="op">=</span> <span class="fu">guide_legend</span><span class="op">(</span>ncol <span class="op">=</span> <span class="fl">6</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+<p><img src="reference/figures/README-unnamed-chunk-3-1.png" width="100%"></p>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/pkg/ggseg3d/man/ggseg3d.html">ggseg3d</a></span><span class="op">(</span>atlas <span class="op">=</span> <span class="va">economo_3d</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> 
+  <span class="fu"><a href="https://rdrr.io/pkg/ggseg3d/man/add_glassbrain.html">add_glassbrain</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> 
+  <span class="fu"><a href="https://rdrr.io/pkg/ggseg3d/man/pan_camera.html">pan_camera</a></span><span class="op">(</span><span class="st">"right lateral"</span><span class="op">)</span></code></pre></div>
+<p><img src="reference/figures/README-3d-plot.png" width="100%"></p>
+<p>Please note that the ‘ggsegEconomo’ project is released with a <a href="CODE_OF_CONDUCT.html">Contributor Code of Conduct</a>. By contributing to this project, you agree to abide by its terms.</p>
+</div>
+</div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
@@ -86,7 +130,13 @@ This is a support package for the ggseg, and ggseg3d packages.
 </ul>
 </div>
 
-  </div>
+  <div class="dev-status">
+<h2>Dev status</h2>
+<ul class="list-unstyled">
+<li><a href="https://github.com/ggseg/ggsegEconomo/actions"><img src="https://github.com/ggseg/ggsegEconomo/workflows/R-CMD-check/badge.svg" alt="R-CMD-check"></a></li>
+</ul>
+</div>
+</div>
 </div>
 
 
