@@ -6,7 +6,7 @@
 <!-- badges: start -->
 
 [![R-CMD-check](https://github.com/ggseg/ggsegEconomo/workflows/R-CMD-check/badge.svg)](https://github.com/ggseg/ggsegEconomo/actions)
-[![DOI](https://zenodo.org/badge/424723872.svg)](https://zenodo.org/badge/latestdoi/424723872)
+[![DOI](https://zenodo.org/badge/425036347.svg)](https://zenodo.org/badge/latestdoi/425036347)
 
 <!-- badges: end -->
 
